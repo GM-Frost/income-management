@@ -12,6 +12,8 @@
 # Project Description
 This project was built to learn various aspects of Python Django, including Router, Models, tables, Authentications, Email Validation, charts, and designing of the admin panel. The project allows users to specify their income and expenditure using a form, and the records are stored in a PostgreSQL database.
 
+# Set up the PostgreSQL database and configure the database settings in the project's settings file.
+
 # Functionality
 
 **Income Records:** Users can enter the amount, description, select the source of income, and specify the date. After submitting the form, the record is added to the Income Model and displayed along with an asynchronous JavaScript summary chart.
@@ -30,10 +32,7 @@ This project was built to learn various aspects of Python Django, including Rout
 
 **Download Records:** Allows user to do the Crud function and also download the record in PDF | CSV | Excel format
 
-# Set up the PostgreSQL database and configure the database settings in the project's settings file.
-
-
-# Income Management SNAPS
+# Income Management Snaps
 <p align="center">
   <img src="https://nayanbastola.com/wp-content/uploads/2023/05/Screenshot-2023-05-22-175338.png" width="350" alt="accessibility text">
   <img src="https://nayanbastola.com/wp-content/uploads/2023/05/Screenshot-2023-05-22-175352.png" width="350" alt="accessibility text">
