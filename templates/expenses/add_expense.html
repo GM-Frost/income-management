@@ -1,0 +1,55 @@
+{% extends 'base.html'%}
+
+
+{%block content%}
+
+<div class="container mt-4">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'expenses' %}">Expenses</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Add Expenses</li>
+    </ol>
+  </nav>
+  <div class="card border-secondary mb-3 mx-auto" style=" max-width: 50rem; width: 100%;">
+    <div class="card-header">Add Expense</div>
+    <div class="card-body">
+      <form action="{% url 'add-expense'%}" method="post">
+        {% include 'partials/_messages.html'%}
+        {% csrf_token %}
+        <div class="form-group">
+          <fieldset>
+            <label class="form-label mt-4" >Amount</label>
+            <input class="form-control"type="number" name="amount" value="{{values.amount}}">
+          </fieldset>
+
+          <fieldset>
+            <label class="form-label mt-4" >Description</label>
+            <input class="form-control" type="text" name="description" value="{{values.description}}">
+          </fieldset>
+
+          <fieldset>
+            <label class="form-label mt-4" >Category</label>
+            <select class="form-select" name="category">
+             {% for category in categories%}
+              <option name="category" value="{{category.name}}">{{category.name}}</option>
+             {%endfor%}
+            </select>
+          </fieldset>
+
+          <fieldset>
+            <label class="form-label mt-4" >Date</label>
+            <input class="form-control" type="date" name="expense-date" >
+          </fieldset>
+        </div>
+        <div class="text-center">
+          <input type="submit" value="submit" class=" mt-5 btn btn-outline-secondary">
+        </div>
+      </form>
+    </div>
+  </div>
+  
+
+  
+</div>
+{%endblock%}
+

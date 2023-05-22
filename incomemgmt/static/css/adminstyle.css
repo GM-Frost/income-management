@@ -1,0 +1,38 @@
+#header{
+    background:rgb(30, 83, 139);
+ 
+}
+
+div.breadcrumbs{
+    background:#787878 ;
+    padding: 10px 40px;
+    border: none;
+    font-size: 14px;
+    font-weight: bold;
+    color:#eade99;
+    text-align: left;
+}
+
+
+
+
+.submit-row input[type="submit"],
+.submit-row input[type="button"],
+.submit-row input{
+    background:rgb(30, 83, 139);
+        width: 100%;
+  
+}
+.submit-row input[type="submit"]:hover,
+.submit-row input[type="button"]:hover,
+.submit-row input:hover{
+    background:#eade99;
+        width: 100%;
+        color:black;
+        font-weight: bold;
+  
+}
+.module h2, .module caption, .inline-group h2{
+    background:rgb(30, 83, 139);
+    
+}

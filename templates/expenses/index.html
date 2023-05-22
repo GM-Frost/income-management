@@ -1,0 +1,131 @@
+{% extends 'base.html'%}
+
+{% load static %}
+{%block content%}
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-10">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href=""></a></li>
+            <li class="breadcrumb-item active" aria-current="page">My Expenses</li>
+            </ol>
+        </nav>
+    </div>
+
+    <div class="col-md-2">
+        <a href="{% url 'add-expense'%}" class="btn btn-outline-success btn-sm">New Expense</a>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+    {%include 'partials/_messages.html'%}
+    <div class="row">
+        <div class="col-md-8">
+          <div class="row">
+            <div class="col-md-4">
+                <a href="{% url 'export-csv' %}" class="mt-2 btn btn-dark btn-sm">Export CSV</a>
+              </div>
+              <div class="col-md-4">
+                <a href="{% url 'export-pdf' %}" class="mt-2 btn btn-danger btn-sm">Export PDF</a>
+              </div>
+              <div class="col-md-4">
+                <a href="{% url 'export-excel' %}" class="mt-2 btn btn-warning btn-sm" style="color:black;">Export Excel</a>
+              </div>
+          </div>
+
+        </div>
+        <div class="col-md-4">
+            <div class="form-group mt-3">
+                <input class="form-control " type="search" placeholder="Search..." id="searchField">
+            </div>
+        </div>
+    </div>
+    {% if expenses.count %}
+        <div class="app-table">
+            <table class="table table-stripped table-hover">
+                <thead class="table-secondary">
+                    <tr>
+                        <th>Amount : ({{currency}})</th>
+                        <th>Category </th>
+                        <th>Description </th>
+                        <th>Date </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for expense in page_obj%}
+                        <tr >
+                            <td>{{expense.amount}}</td>
+                            <td>{{expense.category}}</td>
+                            <td>{{expense.description}}</td>
+                            <td>{{expense.date}}</td>
+                            <td><a href="{% url 'expense-edit' expense.id %}" class="btn btn-outline-info btn-sm">Edit</a>
+                            <a href="{% url 'expense-delete' expense.id %}" class="btn btn-outline-danger btn-sm">X</a></td>
+                        </tr>
+                    {%endfor%}
+                </tbody>
+            </table>
+        </div>
+
+        <div class="table-output">
+            <table class="table table-stripped table-hover">
+                <thead class="table-secondary">
+                    <tr>
+                        <th>Amount : ({{currency}})</th>
+                        <th>Category </th>
+                        <th>Description </th>
+                        <th>Date </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody class="table-body">
+                   
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pagination-container">
+            <div class="">
+                Showing Page {{page_obj.number}} of {{ page_obj.paginator.num_pages }}
+            </div>
+                <ul class="pagination align-right float-right mr-auto">
+                    {% if page_obj.has_previous %}
+                    <li {% if page_obj.number == 1 %} class="page-item active"{%endif%}><a class="page-link" href="?page=1">&laquo;</a></li>
+                    <li class="page-item"><a class="page-link" href="?page={{page_obj.previous_page_number}}">Previous</a></li>
+                    {%endif%}
+            
+                    {% if page_obj.has_next %}
+                    <li class="page-item"><a class="page-link" href="?page={{page_obj.next_page_number}}">Next</a></li>
+                    <li class="page-item"><a class="page-link" href="?page={{page_obj.paginator.num_pages}}">{{page_obj.paginator.num_pages}}</a></li>
+                    {%endif%}
+                </ul>
+        </div>
+
+        <div class="container">
+            <div class="row d-flex justify-content-between align-items-center px-2 mt-4 mb-1">
+             
+                <div class="col-md-6">
+                    <canvas id="myChart2"></canvas>
+                  </div>
+                  <div class="col-md-6">
+                    <canvas id="myChart1"></canvas>
+                  </div>
+               
+            </div>
+          </div>
+            
+            <script src="{% static 'js/chart.js' %}"></script>
+            <script src="{% static 'js/statsexpense.js' %}"></script>
+
+    {% else %}
+    <h5 class="mt-5 text-center">Nothing to Show 😔</h5>
+    {% endif %}
+</div>
+
+<script src="{% static 'js/searchExpenses.js' %}">
+
+</script>
+
+{%endblock%}

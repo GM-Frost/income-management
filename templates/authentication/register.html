@@ -1,0 +1,58 @@
+{% extends 'base_auth.html'%}
+{%load static %}
+
+{% block content%}
+<div class="row ">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <div class="card mt-5 " style="margin: 0 auto; float: none;margin-bottom: 10px;">
+           
+            <div class="card-body">
+                <div class="card-title py-3">
+                    <h4>  Register for a Free Account</h4>
+                </div>
+
+                <form action="{%url 'register'%}" method="post">
+                    {%csrf_token%}
+                    {%include 'partials/_messages.html'%}
+                    <div class="form-floating mb-3">
+                        <input type="text" name="username" id="usernameField" placeholder="Username" class="form-control form-contorl-sm" value ="{{fieldValues.username}}">
+                        <label for="floatingInput">Username</label>
+                    </div>
+                    <div class="invalid_feedback" style="display:none;color:red;">
+                    </div>
+                    <p class="text-sm text-success usernameSuccessNotify"></p>
+
+                    <div class="form-floating mb-3">
+                        <input type="email" name="email" id="emailField" placeholder="Email"  class="form-control form-contorl-sm" value ="{{fieldValues.email}}">
+                        <label for="floatingInput">Email</label>
+                    </div>
+                    <div class="invalid_emailFeeback" style="display:none;color:red;">
+                    </div>
+                    <p class="text-sm text-success emailSuccessNotify"></p>
+
+                    <div class="form-floating mb-3">
+                        <input type="password" name="password" id="passwordField" placeholder="Password"  class="form-control form-contorl-sm">
+                        <label for="floatingInput">Password</label>
+                        <i><ul><li><small class="form-floating text-muted float-start">Password should have more than 6 Characters</small></li></ul></i>
+                    </div>
+                        
+                        <small class="form-floating text-muted float-end showPasswordToggle">SHOW</small>
+                        
+
+                        <div class="d-grid gap-2 col-6 mx-auto  mt-5">
+                            <input type="submit" value="Register" class="btn btn-block btn-outline-primary register-btn">
+                        </div>
+                        <div class="mt-5">
+                            <p>Already Register? Login <a href="{%url 'login'%}">Here!</a></p>
+                        </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4"></div>
+</div>
+
+<script type="application/javascript" src="{% static 'js/registration.js' %}"></script>
+{%endblock%}

@@ -1,0 +1,16 @@
+{% extends 'admin/base.html'%}
+{% load static%}
+
+{% block branding %}
+    
+    <h1 id="head">
+        <img src="{% static 'images/logo1.png'%}" style="width:15%; aspect-ratio:3/2;object-fit: contain;mix-blend-mode:normal;"/>
+        Truely Income  
+    </h1>
+
+{% endblock %}
+
+{% block extrastyle%}
+
+<link rel="stylesheet" href="{% static 'css/adminstyle.css' %}">
+{%endblock%}

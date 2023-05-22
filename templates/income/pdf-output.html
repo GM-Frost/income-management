@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>PDF OUTPUT</title>
+
+    <style>
+        @page{
+            size:"A4";
+            margin: 2.5cm 1.5cm 3.5cm 1.5cm;
+
+            @top-center{
+            }
+            @bottom-right{
+                content: "Page " counter(page) " of " counter(pages);
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container" style="justify-content: center;text-align: center;margin-bottom: 50px;">
+        <img src="https://raw.githubusercontent.com/GM-Frost/Frosty-Inv-Management/master/Images/App-Icon.png" style=" display: block;
+        margin: 0 auto; width:15%; text-align: center;
+    display: block; aspect-ratio:3/2;object-fit: contain;mix-blend-mode:normal; "/>
+    </div>
+
+    <div class="container-fluid">
+        <table class="table">
+            <thead class="thead">
+                 <tr>
+                     <th  scope="col">Item No.</th>
+                     <th  scope="col">Amount</th>
+                     <th  scope="col">Source</th>
+                     <th  scope="col">Description</th>
+                     <th  scope="col">Date</th>
+                 </tr>
+            </thead>
+            <tbody>
+             {% for income in income %}
+             <tr>
+                 <td>{{forloop.counter}}</td>
+                 <td>{{income.amount}}</td>
+                 <td>{{income.incomeSource}}</td>
+                 <td>{{income.description}}</td>
+                 <td>{{income.date}}</td>
+             </tr>
+             {%endfor%}
+     
+             <tr>
+                 <td>Total: </td>
+                 <td>{{total}}</td>
+             </tr>
+            </tbody>
+         </table>
+    </div>
+</body>
+</html>

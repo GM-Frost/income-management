@@ -1,0 +1,47 @@
+{% extends 'base.html'%}
+{%load static %}
+
+{% block content%}
+<div class="row ">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <div class="card mt-5 " style="margin: 0 auto; float: none;margin-bottom: 10px;">
+           
+            <div class="card-body">
+                <div class="card-title py-3">
+                    <h4>  Reset Your Password</h4>
+                </div>
+
+                <form action="{%url 'reset-password'%}" method="post">
+                    {%csrf_token%}
+                    {%include 'partials/_messages.html'%}
+                  
+
+                    <div class="form-floating mb-3">
+                        <input type="password" name="password" id="passwordField" placeholder="Password"  class="form-control form-contorl-sm" value ="{{fieldValues.email}}">
+                        <label for="floatingInput">Password</label>
+                        <small class="form-floating text-muted float-end showPasswordToggle">SHOW</small>
+                        <i><ul><li><small class="form-floating text-muted float-start">Password should have more than 6 Characters</small></li></ul></i>
+
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="password" name="password2" id="passwordField2" placeholder="Password"  class="form-control form-contorl-sm">
+                        <label for="floatingInput">Re-type Password</label>
+                    </div>
+                        
+                        
+
+                        <div class="d-grid gap-2 col-6 mx-auto  mt-5">
+                            <input type="submit" value="Reset" class="btn btn-block btn-outline-warning ">
+                        </div>
+              
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4"></div>
+</div>
+
+<script type="application/javascript" src="{% static 'js/registration.js' %}"></script>
+{%endblock%}
