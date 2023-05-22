@@ -2,6 +2,11 @@
 <p align="center">
   <img src="https://raw.githubusercontent.com/GM-Frost/Frosty-Inv-Management/master/Images/App-Logo-Main.png" width="350" title="hover text">
   <img src="https://raw.githubusercontent.com/GM-Frost/Frosty-Inv-Management/master/Images/App-Icon.png" width="350" alt="accessibility text">
+  <img src="https://nayanbastola.com/wp-content/uploads/2023/05/Screenshot-2023-05-22-175338.png" width="350" alt="accessibility text">
+  <img src="https://nayanbastola.com/wp-content/uploads/2023/05/Screenshot-2023-05-22-175352.png" width="350" alt="accessibility text">
+    <img src="https://nayanbastola.com/wp-content/uploads/2023/05/Screenshot-2023-05-22-175448.png" width="350" alt="accessibility text">
+  <img src="https://nayanbastola.com/wp-content/uploads/2023/05/Screenshot-2023-05-22-175410.png" width="350" alt="accessibility text">
+
 </p>
 
 # 🔗 Django Site
@@ -16,7 +21,9 @@ This project was built to learn various aspects of Python Django, including Rout
 
 **Expense Records:** Similar to the income records, users can enter the expense amount, description, select the category, and specify the date. The submitted form updates the expense model and displays the chart along with the record.
 
-**CRUD Functionality:** Users can update and remove both income and expense records.
+**CRUD Functionality:** Users can update and remove both income and expense records. Change Password
+
+**Preferences:** Users can update the currency format for the application
 
 **User Registration:** Before using the application, users are required to register on the site. Registration includes instant validation and uses asynchronous AJAX validation. Validation prompts are displayed to the user on the same page.
 
