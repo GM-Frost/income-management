@@ -2,10 +2,7 @@
 <p align="center">
   <img src="https://raw.githubusercontent.com/GM-Frost/Frosty-Inv-Management/master/Images/App-Logo-Main.png" width="350" title="hover text">
   <img src="https://raw.githubusercontent.com/GM-Frost/Frosty-Inv-Management/master/Images/App-Icon.png" width="350" alt="accessibility text">
-  <img src="https://nayanbastola.com/wp-content/uploads/2023/05/Screenshot-2023-05-22-175338.png" width="350" alt="accessibility text">
-  <img src="https://nayanbastola.com/wp-content/uploads/2023/05/Screenshot-2023-05-22-175352.png" width="350" alt="accessibility text">
-    <img src="https://nayanbastola.com/wp-content/uploads/2023/05/Screenshot-2023-05-22-175448.png" width="350" alt="accessibility text">
-  <img src="https://nayanbastola.com/wp-content/uploads/2023/05/Screenshot-2023-05-22-175410.png" width="350" alt="accessibility text">
+
 
 </p>
 
@@ -35,6 +32,16 @@ This project was built to learn various aspects of Python Django, including Rout
 
 # Set up the PostgreSQL database and configure the database settings in the project's settings file.
 
+
+# Income Management SNAPS
+<p align="center">
+  <img src="https://nayanbastola.com/wp-content/uploads/2023/05/Screenshot-2023-05-22-175338.png" width="350" alt="accessibility text">
+  <img src="https://nayanbastola.com/wp-content/uploads/2023/05/Screenshot-2023-05-22-175352.png" width="350" alt="accessibility text">
+    <img src="https://nayanbastola.com/wp-content/uploads/2023/05/Screenshot-2023-05-22-175448.png" width="350" alt="accessibility text">
+  <img src="https://nayanbastola.com/wp-content/uploads/2023/05/Screenshot-2023-05-22-175410.png" width="350" alt="accessibility text">
+</p>
+
+
 # Usage
 1) Register a new user account on the site.:
 2) Log in to the application using your credentials
@@ -42,3 +49,5 @@ This project was built to learn various aspects of Python Django, including Rout
 4) View the summary charts and records for income and expenses.
 5) Update or remove any records as needed.
 6) Download the record in PDF / CSV / Excel Format
+
+
