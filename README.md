@@ -7,7 +7,7 @@
 </p>
 
 # 🔗 Django Site
-<a href ="#" target="_blank">Test the Site </a>
+<a href ="https://incomemanagement.nayanbastola.com/" target="_blank">Test the Site </a>
 
 # Project Description
 This project was built to learn various aspects of Python Django, including Router, Models, tables, Authentications, Email Validation, charts, and designing of the admin panel. The project allows users to specify their income and expenditure using a form, and the records are stored in a PostgreSQL database.
