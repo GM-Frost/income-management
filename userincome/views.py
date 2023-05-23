@@ -35,7 +35,11 @@ def index(request):
     paginator = Paginator(income,5)
     page_number = request.GET.get('page')
     page_obj = Paginator.get_page(paginator,page_number)
-    currency=UserPreferences.objects.get(user=request.user).currency
+    currency_exists = UserPreferences.objects.filter(user=request.user).exists()
+    if currency_exists:
+        currency = UserPreferences.objects.get(user=request.user).currency
+    else:
+        currency = UserPreferences.objects.create(user=request.user, currency='NPR - Nepalese Rupee')
     context={
         'income':income,
         'page_obj':page_obj,

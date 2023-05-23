@@ -12,7 +12,7 @@ def index(request):
     
     
     #context manager
-    with open(file_path,'r') as json_file:
+    with open(file_path, encoding='utf-8') as json_file:
         #convert json into python dict
         data = json.load(json_file)
         for k,v in data.items():
